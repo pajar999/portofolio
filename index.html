@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pajar Kurniawan — Portfolio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind dark mode via class
+    tailwind.config = { darkMode: 'class' };
+  </script>
+
+  <!-- AOS (scroll animation) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Swiper (certificates slider) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+
+  <style>
+    /* Glass utility */
+    .glass {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .glass-dark {
+      background: rgba(17,25,40,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-500 dark:bg-gray-900 dark:text-gray-200">
+
+  <!-- Particles Background -->
+  <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between glass dark:glass-dark rounded-b-2xl shadow">
+      <a href="#" class="text-xl font-extrabold tracking-tight">
+        Pajar<span class="text-red-500">.dev</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:opacity-80">Tentang</a>
+        <a href="#experience" class="hover:opacity-80">Pengalaman</a>
+        <a href="#skills" class="hover:opacity-80">Keahlian</a>
+        <a href="#certificates" class="hover:opacity-80">Sertifikat</a>
+        <a href="#contact" class="hover:opacity-80">Kontak</a>
+      </nav>
+      <button id="themeToggle" class="px-3 py-2 rounded-lg text-sm bg-gray-200 dark:bg-gray-800">
+        ??
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="about" class="py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Foto / Ilustrasi -->
+    <div class="relative" data-aos="fade-right">
+      <div class="absolute -inset-2 bg-gradient-to-r from-red-500 to-yellow-400 rounded-3xl blur opacity-30"></div>
+      <img src="assets/img/profil.jpg" alt="Pajar Kurniawan"
+           class="relative rounded-3xl shadow-2xl w-full object-cover" />
+    </div>
+
+    <!-- Teks -->
+    <div class="space-y-6" data-aos="fade-left">
+      <h2 class="text-4xl font-extrabold">
+        Tentang <span class="text-red-500">Saya</span>
+      </h2>
+      <p class="text-lg leading-relaxed opacity-90">
+        Saya seorang <span class="font-semibold">IT Engineer</span> dengan pengalaman lebih dari <b>5 tahun</b> 
+        dalam <em>cloud computing, network management,</em> dan <em>security</em>.  
+        Fokus saya adalah membantu perusahaan membangun infrastruktur digital yang 
+        <span class="text-red-500 font-semibold">aman, scalable,</span> dan <span class="text-yellow-500 font-semibold">efisien</span>.
+      </p>
+
+      <!-- Badge Keunggulan -->
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-red-100 text-red-600 dark:bg-red-600/20 dark:text-red-400 rounded-full text-sm font-medium shadow-sm">
+          ?? Cloud Specialist
+        </span>
+        <span class="px-4 py-2 bg-yellow-100 text-yellow-600 dark:bg-yellow-600/20 dark:text-yellow-400 rounded-full text-sm font-medium shadow-sm">
+          ?? Security & Network
+        </span>
+        <span class="px-4 py-2 bg-green-100 text-green-600 dark:bg-green-600/20 dark:text-green-400 rounded-full text-sm font-medium shadow-sm">
+          ? Automation & DevOps
+        </span>
+      </div>
+
+      <!-- Tombol -->
+      <div class="flex gap-4 pt-4">
+        <a href="#experience" 
+           class="px-5 py-3 rounded-xl font-semibold bg-red-600 text-white hover:bg-red-500 shadow">
+           Lihat Pengalaman
+        </a>
+        <a href="#contact" 
+           class="px-5 py-3 rounded-xl font-semibold bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 shadow">
+           Hubungi Saya
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education" class="py-20 px-6 bg-gray-100 dark:bg-gray-800">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Pendidikan</h2>
+    
+    <div class="relative border-l-4 border-red-600 dark:border-red-400 ml-6">
+      <!-- Education Item -->
+      <div class="mb-10 relative" data-aos="fade-right">
+        <div class="absolute -left-3 w-6 h-6 bg-red-600 dark:bg-red-400 rounded-full border-4 border-white"></div>
+        <div class="ml-6 p-6 rounded-2xl bg-white dark:bg-gray-900 shadow">
+          <h3 class="text-xl font-semibold">Universitas Indonesia Membangun</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">S1 Teknik Informatika · 2017 – 2021</p>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            Fokus pada pengembangan sistem informasi, jaringan komputer, dan cloud computing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- EXPERIENCE -->
+<section id="experience" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Perjalanan Karier</h2>
+
+    <div class="relative border-l-4 border-red-600 dark:border-red-400 ml-6">
+
+      <!-- Telkomsigma (Terbaru) -->
+      <div class="mb-10 relative" data-aos="fade-right">
+        <div class="absolute -left-3 w-6 h-6 bg-red-600 dark:bg-red-400 rounded-full border-4 border-white animate-pulse"></div>
+        <div class="ml-6 p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+          <h3 class="text-xl font-semibold">Engineer On Site (Cloud Services)</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Telkomsigma · 08/2023 – Sekarang</p>
+          <ul class="mt-2 list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Create Virtual Data Center</li>
+            <li>Config VMware NSX-T & Veeam Backup</li>
+            <li>Palo Alto Firewall & AVI Load Balancer</li>
+            <li>Root Cause Analysis Report</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- J&T Cargo -->
+      <div class="mb-10 relative" data-aos="fade-left">
+        <div class="absolute -left-3 w-6 h-6 bg-red-600 dark:bg-red-400 rounded-full border-4 border-white"></div>
+        <div class="ml-6 p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+          <h3 class="text-xl font-semibold">IT Staff</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">PT Global Jet Cargo (J&T Cargo) · 11/2022 – 08/2023</p>
+          <ul class="mt-2 list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Dukungan teknis hardware & software</li>
+            <li>Instalasi & konfigurasi perangkat IT</li>
+            <li>Desain & implementasi jaringan LAN/WAN</li>
+            <li>Pemeliharaan & update sistem</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Zettagrid -->
+      <div class="mb-10 relative" data-aos="fade-right">
+        <div class="absolute -left-3 w-6 h-6 bg-red-600 dark:bg-red-400 rounded-full border-4 border-white"></div>
+        <div class="ml-6 p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+          <h3 class="text-xl font-semibold">Cloud Support</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">PT Arupa Cloud Nusantara (Zettagrid) · 03/2022 – 11/2022</p>
+          <ul class="mt-2 list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Dukungan teknis cloud & monitoring</li>
+            <li>Optimasi performa & efisiensi biaya</li>
+            <li>Onboarding & panduan pelanggan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sanjaya (Paling lama) -->
+      <div class="relative" data-aos="fade-left">
+        <div class="absolute -left-3 w-6 h-6 bg-red-600 dark:bg-red-400 rounded-full border-4 border-white"></div>
+        <div class="ml-6 p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+          <h3 class="text-xl font-semibold">IT Operation</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">PT Sanjaya Internasional Fishery · 11/2020 – 01/2022</p>
+          <ul class="mt-2 list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Infrastruktur jaringan & server Linux</li>
+            <li>CCTV, Email, CPanel</li>
+            <li>VPN, VLAN, Tunneling (Mikrotik)</li>
+            <li>Server penyimpanan (OwnCloud)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- SKILLS (Chart) -->
+ <section id="skills" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Tech Stack</h2>
+
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+      <div class="p-4 rounded-xl glass dark:glass-dark shadow hover:-translate-y-1 transition">
+        <img src="assets/icons/vmware.png" alt="VMware" class="w-12 mx-auto"/>
+        <p class="mt-2 text-sm">VMware</p>
+      </div>
+      <div class="p-4 rounded-xl glass dark:glass-dark shadow hover:-translate-y-1 transition">
+        <img src="assets/icons/linux.png" alt="Linux" class="w-12 mx-auto"/>
+        <p class="mt-2 text-sm">Linux</p>
+      </div>
+      <div class="p-4 rounded-xl glass dark:glass-dark shadow hover:-translate-y-1 transition">
+        <img src="assets/icons/docker.png" alt="Docker" class="w-12 mx-auto"/>
+        <p class="mt-2 text-sm">Docker</p>
+      </div>
+      <!-- Tambahkan ikon lain -->
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- CERTIFICATES (Swiper Slider) -->
+  <section id="certificates" class="bg-gray-100 dark:bg-gray-800 py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Sertifikat</h2>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Card Sertifikat 1 -->
+      <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:-translate-y-1 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold">Security Fundamental</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Issued: 2025</p>
+        <a href="img/Security Fundamental.pdf" target="_blank"
+           class="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-500">
+           Lihat Sertifikat
+        </a>
+      </div>
+
+      <!-- Card Sertifikat 2 -->
+      <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:-translate-y-1 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold">AWS Cloud Practitioner</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Issued: 2022</p>
+        <a href="img/AWS-Cloud.pdf" target="_blank"
+           class="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-500">
+           Lihat Sertifikat
+        </a>
+      </div>
+
+      <!-- Card Sertifikat 3 -->
+      <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow hover:-translate-y-1 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold">Docker Fundamental</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Issued: 2021</p>
+        <a href="img/Docker-Fundamental.pdf" target="_blank"
+           class="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-500">
+           Lihat Sertifikat
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+        <!-- Controls -->
+        <div class="flex items-center justify-between mt-4">
+          <div class="swiper-pagination"></div>
+          <div class="flex gap-2">
+            <button class="swiper-button-prev !static !m-0 !w-10 !h-10 after:!text-base rounded-full glass dark:glass-dark"></button>
+            <button class="swiper-button-next !static !m-0 !w-10 !h-10 after:!text-base rounded-full glass dark:glass-dark"></button>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs opacity-60 mt-3">Tip: pastikan file di Google Drive diset <em>Anyone with the link can view</em>.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <div class="max-w-4xl mx-auto text-center">
+    
+    <!-- Judul -->
+    <h2 class="text-4xl font-extrabold mb-4" data-aos="fade-up">
+      Mari <span class="text-red-500">Terhubung</span>
+    </h2>
+    <p class="text-lg opacity-80 mb-12" data-aos="fade-up" data-aos-delay="100">
+      Jangan ragu untuk menghubungi saya melalui media sosial atau langsung kunjungi alamat saya ??
+    </p>
+
+    <!-- Contact Info -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      
+      <!-- Email -->
+      <div class="p-6 rounded-2xl glass dark:glass-dark shadow flex flex-col items-center hover:-translate-y-1 transition" data-aos="zoom-in">
+        <span class="text-2xl mb-2">??</span>
+        <h3 class="font-semibold">Email</h3>
+        <a href="mailto:pajarkurniawan9@gmail.com" class="text-sm text-red-600 dark:text-red-400 hover:underline">
+          pajarkurniawan9@gmail.com
+        </a>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="p-6 rounded-2xl glass dark:glass-dark shadow flex flex-col items-center hover:-translate-y-1 transition" data-aos="zoom-in" data-aos-delay="100">
+        <span class="text-2xl mb-2">??</span>
+        <h3 class="font-semibold">WhatsApp</h3>
+        <a href="https://wa.me/6285773174000" target="_blank"
+           class="text-sm text-green-600 dark:text-green-400 hover:underline">
+          +62 857 7317 4000
+        </a>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="p-6 rounded-2xl glass dark:glass-dark shadow flex flex-col items-center hover:-translate-y-1 transition" data-aos="zoom-in" data-aos-delay="200">
+        <span class="text-2xl mb-2">??</span>
+        <h3 class="font-semibold">LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/pajar-kurniawan-511b64275" target="_blank"
+           class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+          linkedin.com/in/pajar-kurniawan
+        </a>
+      </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.870285594214!2d106.7116!3d-6.1375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1d00b6f14e25%3A0x123456789abcdef!2sKalideres%2C%20Jakarta%20Barat!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+  <!-- FOOTER -->
+  <footer class="py-8 text-center opacity-70">
+    © 2025 Pajar Kurniawan · Dibuat dengan ??
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.5.0/tsparticles.bundle.min.js"></script>
+
+  <!-- App Scripts -->
+  <script>
+    // AOS
+    AOS.init({ duration: 800, once: true });
+
+    // Dark mode remember preference
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') root.classList.add('dark');
+    themeToggle.textContent = root.classList.contains('dark') ? '??' : '??';
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const now = root.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', now);
+      themeToggle.textContent = now === 'dark' ? '??' : '??';
+    });
+
+    // Swiper (Certificates)
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // Chart.js (Skills)
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['VMware', 'Veeam', 'Palo Alto', 'Linux', 'Terraform', 'Docker'],
+        datasets: [{
+          label: 'Level',
+          data: [90, 85, 80, 88, 75, 78], // sesuaikan
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { r: { angleLines: { display: false }, suggestedMin: 0, suggestedMax: 100, ticks: { stepSize: 20 } } },
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // tsParticles (background)
+    tsParticles.load("tsparticles", {
+      background: { color: { value: "" } },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 60, density: { enable: true, area: 800 } },
+        color: { value: ["#ef4444", "#f59e0b", "#22c55e", "#3b82f6"] },
+        links: { enable: true, distance: 140, opacity: 0.2 },
+        move: { enable: true, speed: 1.2, outModes: { default: "bounce" } },
+        opacity: { value: 0.3 },
+        size: { value: { min: 1, max: 3 } }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
