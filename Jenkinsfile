@@ -10,17 +10,18 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo '✅ Build step - static website jadi cuma cek file'
+                echo '✅ Build step - static website (cek file)'
                 sh 'ls -lah'
             }
         }
 
-      stage('Deploy') {
-    steps {
-        echo '🚀 Deploy ke Nginx folder...'
-        sh 'rsync -av --delete ./ /var/www/portfolio/'
+        stage('Deploy') {
+            steps {
+                echo '🚀 Deploy ke Nginx folder...'
+                sh 'rsync -av --delete --exclude "Jenkinsfile" ./ /var/www/portfolio/'
+            }
+        }
     }
-}
 
     post {
         success {
