@@ -15,14 +15,12 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo '🚀 Deploy ke Nginx folder...'
-                // Hapus semua isi lama lalu copy file baru
-                sh 'rsync -av --delete ./ /root/lab-docker/website/'
-            }
-        }
+      stage('Deploy') {
+    steps {
+        echo '🚀 Deploy ke Nginx folder...'
+        sh 'rsync -av --delete ./ /var/www/portfolio/'
     }
+}
 
     post {
         success {
